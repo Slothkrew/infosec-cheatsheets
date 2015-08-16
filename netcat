@@ -1,0 +1,11 @@
+# netcat
+
+Netcat is a tool for reading from/writing to network connections. It supports TCP and UDP.
+
+##### Opening a raw connection
+
+`nc <host> <port>`
+
+##### One-shot webserver to serve a file
+
+`{ echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c <some.file)\r\n\r\n"; cat some.file; } | nc -l -p 8080`
