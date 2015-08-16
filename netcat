@@ -6,6 +6,14 @@ Netcat is a tool for reading from/writing to network connections. It supports TC
 
 `nc <host> <port>`
 
+##### Listen for datagrams
+
+`nc -u -l -p <port>`
+
+##### Send datagrams
+
+`echo 'hey look at me i'm a datagram for your protocol or something' | nc -u <host> <port>`
+
 ##### One-shot webserver to serve a file
 
 `{ echo -ne "HTTP/1.0 200 OK\r\nContent-Length: $(wc -c <some.file)\r\n\r\n"; cat some.file; } | nc -l -p 8080`
